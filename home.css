@@ -1,0 +1,31 @@
+.myclass{
+    align-items: center;
+}
+.video-container {
+    text-align: center; 
+    padding: 10px; 
+    margin: 0; 
+  }
+  
+  video {
+    display: inline-block; 
+    max-width: 100%; 
+    height: auto; 
+  }
+  
+
+#receipt {
+    border: 2px solid #f4511e;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  
+  #receipt h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  #receipt p {
+    font-size: 18px;
+  }

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FREQUENTLY ASKED QUESTIONS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .chatbox-container {
+            width: 100%;
+            max-width: 500px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .header {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.5em;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .chatbox-body {
+            padding: 20px;
+        }
+
+        .chatbox-body input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #007bff;
+            border-radius: 5px;
+            font-size: 1em;
+            box-sizing: border-box;
+        }
+
+        .suggestions {
+            margin-top: 10px;
+            border: 1px solid #007bff;
+            border-radius: 5px;
+            background-color: #ffffff;
+            max-height: 150px;
+            overflow-y: auto;
+            display: none;
+        }
+
+        .suggestions p {
+            margin: 0;
+            padding: 10px;
+            cursor: pointer;
+            border-bottom: 1px solid #e0e0e0;
+            transition: background-color 0.3s;
+        }
+
+        .suggestions p:last-child {
+            border-bottom: none;
+        }
+
+        .suggestions p:hover {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+
+        .answer {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="chatbox-container">
+        <div class="header">AQI Chatbot</div>
+        <div class="chatbox-body">
+            <input type="text" id="questionInput" placeholder="Ask your question about AQI...">
+            <div class="suggestions" id="suggestions"></div>
+            <div class="answer" id="answer"></div>
+        </div>
+    </div>
+
+    <script>
+        const aqiQA = {
+            "What is AQI?": "AQI stands for Air Quality Index, a numerical scale used to communicate how polluted the air currently is or how polluted it is forecast to become.",
+            "How is AQI measured?": "AQI is measured using sensors that detect pollutants like PM2.5, PM10, CO, NO2, SO2, and O3. Each pollutant's concentration is converted into a separate AQI value.",
+            "What does PM2.5 mean?": "PM2.5 refers to particulate matter that is less than 2.5 micrometers in diameter. These tiny particles can penetrate deep into the lungs and even enter the bloodstream.",
+            "What is a good AQI value?": "A good AQI value is between 0-50, indicating that air quality is considered satisfactory, and air pollution poses little or no risk.",
+            "What AQI level is considered hazardous?": "An AQI value of 301 or higher is considered hazardous, meaning everyone may experience more serious health effects.",
+            "How often is AQI updated?": "AQI is typically updated hourly, though some systems may update more frequently.",
+            "What are the common pollutants measured in AQI?": "Common pollutants include ground-level ozone (O3), particulate matter (PM10 and PM2.5), carbon monoxide (CO), sulfur dioxide (SO2), and nitrogen dioxide (NO2).",
+            "How can AQI affect health?": "High AQI levels can lead to respiratory issues, aggravate asthma, reduce lung function, and increase the risk of heart disease and stroke.",
+            "What is the difference between PM10 and PM2.5?": "PM10 are particles with diameters of 10 micrometers or less, while PM2.5 are finer particles with diameters of 2.5 micrometers or less. PM2.5 is more harmful as it can penetrate deeper into the lungs.",
+            "Can AQI change throughout the day?": "Yes, AQI can fluctuate throughout the day due to changes in weather conditions, traffic, and industrial activities.",
+            "What actions should be taken when AQI is high?": "When AQI is high, it's recommended to reduce outdoor activities, keep windows closed, and use air purifiers indoors.",
+            "What is the role of weather in AQI?": "Weather plays a significant role in AQI. Wind can disperse pollutants, while temperature inversions can trap them near the ground, leading to higher AQI values.",
+            "Is AQI the same everywhere?": "No, AQI can vary significantly between different locations due to factors like industrial activity, traffic, and natural sources of pollution.",
+            "How does AQI affect children and the elderly?": "Children and the elderly are more vulnerable to high AQI levels. Children have developing lungs, and the elderly may have pre-existing health conditions that can be aggravated by poor air quality.",
+            "What is a moderate AQI value?": "A moderate AQI value is between 51-100, indicating that air quality is acceptable, but some pollutants may cause health concerns for a small number of people sensitive to air pollution.",
+            "What is an unhealthy AQI value for sensitive groups?": "An AQI value between 101-150 is considered unhealthy for sensitive groups, such as those with respiratory conditions, who may experience health effects.",
+            "How can one check AQI levels?": "AQI levels can be checked using various apps, websites, or local news channels that report on air quality.",
+            "Can indoor activities affect indoor AQI?": "Yes, activities like cooking, smoking, or using certain cleaning products can increase indoor AQI levels.",
+            "What is an air quality alert?": "An air quality alert is issued when the AQI is expected to reach unhealthy levels, warning the public to take precautions.",
+            "What long-term actions can improve AQI?": "Long-term actions include reducing vehicle emissions, using cleaner energy sources, planting trees, and reducing industrial pollution."
+        };
+
+        const questionInput = document.getElementById('questionInput');
+        const suggestionsDiv = document.getElementById('suggestions');
+        const answerDiv = document.getElementById('answer');
+
+        questionInput.addEventListener('input', function() {
+            const query = this.value.toLowerCase();
+            suggestionsDiv.innerHTML = '';
+            answerDiv.textContent = '';
+
+            if (query) {
+                Object.keys(aqiQA).forEach(question => {
+                    if (question.toLowerCase().includes(query)) {
+                        const suggestion = document.createElement('p');
+                        suggestion.textContent = question;
+                        suggestion.addEventListener('click', function() {
+                            questionInput.value = question;
+                            showAnswer(question);
+                            suggestionsDiv.innerHTML = '';
+                        });
+                        suggestionsDiv.appendChild(suggestion);
+                    }
+                });
+
+                if (suggestionsDiv.children.length > 0) {
+                    suggestionsDiv.style.display = 'block';
+                } else {
+                    suggestionsDiv.style.display = 'none';
+                }
+            } else {
+                suggestionsDiv.style.display = 'none';
+            }
+        });
+
+        function showAnswer(question) {
+            const answer = aqiQA[question] || "Sorry, I don't have an answer for that question.";
+            answerDiv.textContent = answer;
+        }
+    </script>
+
+</body>
+</html>

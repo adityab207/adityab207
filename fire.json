@@ -1,0 +1,116 @@
+{
+    "biopellet_plants": [
+      {
+        "name": "Renewable Energy Plant",
+        "address": "Plot No. 6, Village Karsanpura, Taluka Kheda, District Kheda, Gujarat",
+        "latitude": 22.8467,
+        "longitude": 72.7371,
+        "pincode": 387411
+      },
+      {
+        "name": "EcoFuel India Pvt Ltd",
+        "address": "Survey No. 63/1, Kharpadi, Taluka Khed, District Khed, Maharashtra",
+        "latitude": 18.8238,
+        "longitude": 73.1268,
+        "pincode": 412201
+      },
+      {
+        "name": "Biomass Energy Ltd.",
+        "address": "102, F-1, Block, New Delhi, Delhi",
+        "latitude": 28.6139,
+        "longitude": 77.2090,
+        "pincode": 110001
+      },
+      {
+        "name": "Shree Biomass Energy Pvt Ltd",
+        "address": "Village Jundla, District Karnal, Haryana",
+        "latitude": 29.6866,
+        "longitude": 76.9904,
+        "pincode": 132001
+      },
+      {
+        "name": "Greenway Energy Solutions",
+        "address": "Plot No. 29, Sector 25, Faridabad, Haryana",
+        "latitude": 28.4054,
+        "longitude": 77.3060,
+        "pincode": 121001
+      },
+      {
+        "name": "Agro Renewable Energy",
+        "address": "No. 23, Industrial Estate, Mysore, Karnataka",
+        "latitude": 12.2958,
+        "longitude": 76.6394,
+        "pincode": 570001
+      },
+      {
+        "name": "Indian Bio-Pellet Pvt Ltd",
+        "address": "Plot No. 24, Rajpur, Raipur, Chhattisgarh",
+        "latitude": 21.2514,
+        "longitude": 81.6296,
+        "pincode": 492001
+      },
+      {
+        "name": "Sustainable Biomass Solutions",
+        "address": "Village Raikheda, District Nagpur, Maharashtra",
+        "latitude": 21.1466,
+        "longitude": 79.0849,
+        "pincode": 440001
+      },
+      {
+        "name": "M/s. Biofuel Systems",
+        "address": "No. 33, 2nd Street, Kotturpuram, Chennai, Tamil Nadu",
+        "latitude": 13.0054,
+        "longitude": 80.2480,
+        "pincode": 600085
+      },
+      {
+        "name": "Green Bio Energy Pvt Ltd",
+        "address": "5/29, Poonamallee High Road, Kilpauk, Chennai, Tamil Nadu",
+        "latitude": 13.0918,
+        "longitude": 80.2170,
+        "pincode": 600010
+      },
+      {
+        "name": "Sree Sakthi Biomass Energy",
+        "address": "Plot No. 7, SIDCO Industrial Estate, Coimbatore, Tamil Nadu",
+        "latitude": 11.0168,
+        "longitude": 76.9558,
+        "pincode": 641021
+      },
+      {
+        "name": "Tirupur Bio-Pellet Plant",
+        "address": "Village Anuppampalayam, Tirupur, Tamil Nadu",
+        "latitude": 11.3411,
+        "longitude": 77.3749,
+        "pincode": 641652
+      },
+      {
+        "name": "BioEnergy Solutions",
+        "address": "No. 4/12, Industrial Area, Ekkatuthangal, Chennai, Tamil Nadu",
+        "latitude": 13.0300,
+        "longitude": 80.2130,
+        "pincode": 600097
+      },
+      {
+        "name": "Agro Biomass Energy Ltd.",
+        "address": "54, Mahatma Gandhi Road, Madurai, Tamil Nadu",
+        "latitude": 9.9250,
+        "longitude": 78.1198,
+        "pincode": 625001
+      },
+      {
+        "name": "BioPellets India Pvt Ltd",
+        "address": "No. 15, Rajapalayam, Virudhunagar District, Tamil Nadu",
+        "latitude": 9.4486,
+        "longitude": 77.7580,
+        "pincode": 626117
+      },
+      {
+        "name": "Sustainable Bio Fuels",
+        "address": "7/10, Venkatasamy Road, Salem, Tamil Nadu",
+        "latitude": 11.6643,
+        "longitude": 78.1460,
+        "pincode": 636001
+      }
+    ]
+  }
